@@ -3,6 +3,10 @@ package ioctest;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Condition;
+
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
 import java.beans.Introspector;
 
 public class App {
@@ -31,11 +35,22 @@ public class App {
 	}
 
 	/**
-	 * 改Class名
+	 * 改Class名,将class名改为首字母大写
 	 */
 	@Test
 	public  void testInspector(){
 	String name =	Introspector.decapitalize("LuNongYun");
+		System.out.println(name);
+	}
+
+	@Test
+	public void testGetBeanInfo(){
+		try {
+			BeanInfo beanInfo = Introspector.getBeanInfo(ConfigB.class);
+			System.out.println(beanInfo);
+		} catch (IntrospectionException e) {
+			e.printStackTrace();
+		}
 
 	}
 

@@ -233,7 +233,7 @@ through the use of the `<absolute-ordering />` element in `web.xml`:
 ----
 
 You can then selectively enable web fragments by name, such as Spring's own
-`SpringServletContainerInitializer` that provides support for the Servlet 3
+`ontainerInitializer` that provides support for the Servlet 3
 Java initialization API, if required:
 
 [source,xml,indent=0]

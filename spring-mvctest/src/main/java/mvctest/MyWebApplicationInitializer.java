@@ -8,7 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
 
-public class MyWebApplicationInitializer implements WebApplicationInitializer {
+public class MyWebApplicationInitializer implements ServletContainerInitializer {
 
 	@Override
 	public void onStartup(ServletContext servletCxt) {

@@ -957,9 +957,10 @@ public class DispatcherServlet extends FrameworkServlet {
 			Exception dispatchException = null;
 
 			try {
+				//检查请求文件
 				processedRequest = checkMultipart(request);
 				multipartRequestParsed = (processedRequest != request);
-
+                //得到具体的执行方法
 				// Determine handler for the current request.
 				mappedHandler = getHandler(processedRequest);
 				if (mappedHandler == null) {
