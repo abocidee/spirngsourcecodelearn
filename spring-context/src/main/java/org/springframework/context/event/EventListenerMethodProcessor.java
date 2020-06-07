@@ -132,7 +132,7 @@ public class EventListenerMethodProcessor implements SmartInitializingSingleton,
 		AnnotationAwareOrderComparator.sort(factories);
 		return factories;
 	}
-
+//处理实例
 	protected void processBean(
 			final List<EventListenerFactory> factories, final String beanName, final Class<?> targetType) {
 

@@ -39,12 +39,12 @@ import java.lang.annotation.Target;
  * {@link org.springframework.beans.factory.config.BeanPostProcessor
  * BeanPostProcessor} or
  * {@link org.springframework.beans.factory.config.BeanFactoryPostProcessor BeanFactoryPostProcessor}
- * types. Please consult the javadoc for the {@link AutowiredAnnotationBeanPostProcessor}
+ * types. Please consult the javadoc for the {@link }
  * class (which, by default, checks for the presence of this annotation).
  *
  * @author Juergen Hoeller
  * @since 3.0
- * @see AutowiredAnnotationBeanPostProcessor
+ * @see
  * @see Autowired
  * @see org.springframework.beans.factory.config.BeanExpressionResolver
  * @see org.springframework.beans.factory.support.AutowireCandidateResolver#getSuggestedValue

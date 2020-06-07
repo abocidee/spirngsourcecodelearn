@@ -114,6 +114,7 @@ public class InjectionMetadata {
 
 
 	/**
+	 * 注入的元素
 	 * A single injected element.
 	 */
 	public abstract static class InjectedElement {
