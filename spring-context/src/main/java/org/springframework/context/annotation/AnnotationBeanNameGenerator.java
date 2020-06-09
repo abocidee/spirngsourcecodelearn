@@ -61,6 +61,7 @@ import org.springframework.util.StringUtils;
  * @see org.springframework.stereotype.Controller#value()
  * @see javax.inject.Named#value()
  */
+//注解类名生成器
 public class AnnotationBeanNameGenerator implements BeanNameGenerator {
 
 	private static final String COMPONENT_ANNOTATION_CLASSNAME = "org.springframework.stereotype.Component";
@@ -86,6 +87,7 @@ public class AnnotationBeanNameGenerator implements BeanNameGenerator {
 	 */
 	@Nullable
 	protected String determineBeanNameFromAnnotation(AnnotatedBeanDefinition annotatedDef) {
+		//注解源信息
 		AnnotationMetadata amd = annotatedDef.getMetadata();
 		Set<String> types = amd.getAnnotationTypes();
 		String beanName = null;
