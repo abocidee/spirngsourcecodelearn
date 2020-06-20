@@ -96,8 +96,9 @@ public class AnnotationBeanNameGenerator implements BeanNameGenerator {
 			if (attributes != null && isStereotypeWithNameValue(type, amd.getMetaAnnotationTypes(type), attributes)) {
 				Object value = attributes.get("value");
 				if (value instanceof String) {
+					//得到注解value值
 					String strVal = (String) value;
-					if (StringUtils.hasLength(strVal)) {
+					if (StringUtils.hasLength(strVal)) {//value 不为空处理
 						if (beanName != null && !strVal.equals(beanName)) {
 							throw new IllegalStateException("Stereotype annotations suggest inconsistent " +
 									"component names: '" + beanName + "' versus '" + strVal + "'");

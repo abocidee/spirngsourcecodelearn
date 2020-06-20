@@ -2,7 +2,9 @@ package ioctest;
 
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyTest {
 	/**
@@ -26,5 +28,20 @@ public class MyTest {
 		System.out.println("movie Finder address    "+movieFinder);
 
 
+	}
+
+	@Test
+	public void testXml(){
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("services.xml");
+		A bean = (A)applicationContext.getBean("petStore");
+		System.out.println(bean);
+	}
+
+
+	@Test
+	public void testXml2(){
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("services.xml");
+		B bean = (B)applicationContext.getBean("petStore2");
+		System.out.println(bean);
 	}
 }
