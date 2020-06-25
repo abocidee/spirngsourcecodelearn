@@ -2,9 +2,12 @@ package ioctest;
 
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
 
 public class MyTest {
 	/**
@@ -33,7 +36,7 @@ public class MyTest {
 	@Test
 	public void testXml(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("services.xml");
-		A bean = (A)applicationContext.getBean("petStore");
+		A bean = (A)applicationContext.getBean("pet");
 		System.out.println(bean);
 	}
 
@@ -43,5 +46,19 @@ public class MyTest {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("services.xml");
 		B bean = (B)applicationContext.getBean("petStore2");
 		System.out.println(bean);
+	}
+
+	/**
+	 * 自己创建bean
+	 */
+	@Test
+	public void testCreateBeanByUser(){
+		ApplicationContext applicationContext = new GenericApplicationContext();
+		ConfigurableListableBeanFactory beanFactory = ((GenericApplicationContext) applicationContext).getBeanFactory();
+		beanFactory.registerSingleton("hello",new B());
+		((GenericApplicationContext) applicationContext).refresh();//刷新配置
+
+		System.out.println(applicationContext.getBean("hello"));
+
 	}
 }
